@@ -30,7 +30,7 @@ function Sidebar(props) {
       collapsed={collapse}
       toggled={toggle}
       breakPoint="md"
-      image="/sidebar/valbg2.png"
+      image="/sidebar/valorguard-2.png"
     >
       <SidebarHeader className="proSidebar__header">
         <img

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, ReactEvent } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { ethers } from "ethers";
 import { Flex, Text } from "crox-new-uikit";
@@ -22,9 +22,14 @@ function MyNFTs(props) {
   const isMobile = useMediaQuery("(max-width: 600px)");
   const [nfts, setNfts] = useState([]);
   const [tokens, setTokens] = useState([]);
-  const [formInput, updateFormInput] = useState({ price: "", maxRental: "" });
+  const [formInput, updateFormInput] = useState({
+    price: "0.001",
+    maxRental: "5",
+  });
   const [loadingState, setLoadingState] = useState("not-loaded");
   const [gameContract, setGameContract] = useState(null);
+
+  console.log(formInput);
 
   useEffect(() => {
     if (account) {
